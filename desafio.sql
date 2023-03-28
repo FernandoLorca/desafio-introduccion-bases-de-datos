@@ -1,6 +1,6 @@
 sudo -u postgres psql
 
-CREATE DATABASE fernandolorca123;
+CREATE DATABASE fernando_lorca_123;
 
 \c fernandolorca123;
 
@@ -15,6 +15,11 @@ CREATE TABLE clients (
   updated_at TIMESTAMP NOT NULL DEFAULT now()
 );
 
+INSERT INTO clients(email, client_name, phone, company, priority) VALUES ('florcapinto@gmail.com', 'Fernando Lorca', '12345678', 'Saesa', 1), ('josefina@gmail.com', 'Josefina Díaz', '12345678', 'Garuga', 3),
+('pedro@gmail.com', 'Pedro Lorca', '12345678', 'Germania', 6),
+('pina@gmail.com', 'Piña Lorca', '12345678', 'Patio trasero', 9),
+('maqui@gmail.com', 'Maqui Lorca', '12345678', 'Patio delantero', 10);
+
 INSERT INTO clients(email, client_name, phone, company, priority)
 VALUES (
   'florcapinto@gmail.com',
@@ -26,42 +31,43 @@ VALUES (
 
 INSERT INTO clients(email, client_name, phone, company, priority)
 VALUES (
-  'correo1@gmail.com',
-  'Persona 1',
+  'josefina@gmail.com',
+  'Josefina Díaz',
   '12345678',
-  'Desafío Latam1',
+  'Garuga',
   3
 );
 
 INSERT INTO clients(email, client_name, phone, company, priority)
 VALUES (
-  'correo2@gmail.com',
-  'Persona 2',
+  'pedro@gmail.com',
+  'Pedro Lorca',
   '12345678',
-  'Desafío Latam2',
+  'Germania',
   6
 );
 
 INSERT INTO clients(email, client_name, phone, company, priority)
 VALUES (
-  'correo3@gmail.com',
-  'Persona 3',
+  'piña@gmail.com',
+  'Piña Lorca',
   '12345678',
-  'Desafío Latam3',
+  'Patio trasero',
   9
 );
 
 INSERT INTO clients(email, client_name, phone, company, priority)
 VALUES (
-  'correo4@gmail.com',
-  'Persona 4',
+  'maqui@gmail.com',
+  'Maqui Lorca',
   '12345678',
-  'Desafío Latam4',
+  'Patio delantero',
   10
 );
 
-SELECT * FROM clients ORDER BY priority DESC, LIMIT 3;
 
-SELECT * FROM clients WHERE empresa = 'Saesa' OR prioridad = 10;
+SELECT * FROM clients ORDER BY priority DESC LIMIT 3;
+
+SELECT * FROM clients WHERE company = 'Saesa' OR priority = 10;
 
 \q
